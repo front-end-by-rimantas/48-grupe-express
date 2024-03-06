@@ -3,7 +3,7 @@ import { PageTemplate } from "../lib/PageTemplate.js";
 class Page404 extends PageTemplate {
     constructor() {
         super();
-        this.title = '404 | Pomidoras';
+        this.pageTitle = '404';
     }
 
     main() {
