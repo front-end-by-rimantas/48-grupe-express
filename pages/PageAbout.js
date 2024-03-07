@@ -4,6 +4,7 @@ class PageAbout extends PageTemplate {
     constructor() {
         super();
         this.pageTitle = 'About';
+        this.page = 'about';
     }
 
     main() {
