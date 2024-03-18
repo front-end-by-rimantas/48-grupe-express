@@ -4,6 +4,7 @@ import { Page404 } from '../pages/Page404.js';
 import { PageAbout } from '../pages/PageAbout.js';
 import { PageServicesList } from '../pages/PageServicesList.js';
 import { PageServiceInner } from '../pages/PageServiceInner.js';
+import { PageCalc } from "../pages/PageCalc.js";
 
 const router = Router();
 
@@ -19,6 +20,11 @@ router.get('/about', (req, res) => {
 
 router.get('/services', (req, res) => {
     const page = new PageServicesList();
+    res.send(page.render());
+});
+
+router.get('/calc', (req, res) => {
+    const page = new PageCalc();
     res.send(page.render());
 });
 
