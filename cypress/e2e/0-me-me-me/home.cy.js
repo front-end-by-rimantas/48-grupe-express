@@ -1,7 +1,9 @@
 describe('Home page', () => {
-    it('Exists all necessary elements', () => {
-        cy.visit('http://localhost:4811/');
+    beforeEach(() => {
+        cy.visit('http://localhost:4811');
+    });
 
+    it('Exists all necessary elements', () => {
         cy.get('h1')
             .should('be.exist')
             .should('be.visible')
@@ -25,8 +27,6 @@ describe('Home page', () => {
 
 
     it('Hero image', () => {
-        cy.visit('http://localhost:4811/');
-
         cy.get('main section img')
             .should('be.exist')
             .should('be.visible')
@@ -35,8 +35,6 @@ describe('Home page', () => {
     });
 
     it('Header links', () => {
-        cy.visit('http://localhost:4811/');
-
         cy.get('header > ul > li')
             .contains('Home')
             .should('have.attr', 'href', '/');
@@ -55,8 +53,6 @@ describe('Home page', () => {
     });
 
     it('Footer links', () => {
-        cy.visit('http://localhost:4811/');
-
         cy.get('footer > p')
             .should('be.exist')
             .should('be.visible')
